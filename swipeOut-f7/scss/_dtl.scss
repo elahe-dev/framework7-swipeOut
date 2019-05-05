@@ -1,0 +1,25 @@
+﻿%paralax {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+:root {
+    --navbar-bg-color: rgba(0, 0, 0, 0.50);
+    --navbar-border-bottom: 2px solid rgba(0, 0, 0, .7);
+    --navbar-border-top: 3px solid #cd2122;
+    --color-white: #fff;
+    --color-black: #000;
+}
+
+$list: bus flights hotel paas tour taxi visa;
+@mixin bgimgs {
+    @each $img in $list {
+        .li-#{$img} {
+            background-image: url("../img/#{$img}.jpg");
+        }
+    }
+    @content
+}
